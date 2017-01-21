@@ -35,3 +35,4 @@ TASK_QUEUE = os.environ.get('TASK_QUEUE', '') in ['True', True, 'true']
 SECRET_KEY = os.environ.get('DJANGO_SECRET', 'dvznxtu08$$a9jxjh=jkkswbe5-dw5+ea%4k((1k69ooi7d(hj')
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID', '')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY', '')
+MICROSOFT_FACE_API_KEY = os.environ.get('MICROSOFT_FACE_API_KEY', '')
