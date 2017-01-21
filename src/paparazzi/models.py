@@ -61,3 +61,15 @@ class Photo(TimeStampedModel):
 
     def __str__(self):
         return 'Photo {}'.format(self.pk)
+
+
+    def face_detect(self):
+        self.save()
+
+
+    def find_similar(self):
+        self.save()
+
+
+    def add_face_to_list(self):
+        self.save()
