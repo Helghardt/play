@@ -1,5 +1,5 @@
-from src.administration import serializers
-from src.paparazzi.models import Photo
+from paparazzi.models import Photo
+from rest_framework import serializers
 
 
 class ListCreatePhotoSerializer(serializers.ModelSerializer):
