@@ -15,5 +15,6 @@ class ListCreatePhotoSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data: dict):
         request = self.context['request']
+        instance = Photo.objects.create(**validated_data)
 
         return instance
