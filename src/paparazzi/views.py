@@ -8,7 +8,8 @@ from rest_framework.pagination import CursorPagination, PageNumberPagination
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
 from rest_framework.settings import api_settings
-from src.paparazzi.serializers import ListCreatePhotoSerializer
+from paparazzi.models import Photo
+from paparazzi.serializers import ListCreatePhotoSerializer
 
 
 @api_view(['GET'])
@@ -265,5 +266,7 @@ class ListCreatePhoto(ListCreateAPIView):
     serializer_class = ListCreatePhotoSerializer
 
     def perform_create(self, serializer):
-        tx = serializer.save(user=self.request.user)
-        tx.initiate()
+        serializer.save(user=self.request.user)
+
+    def get_queryset(self):
+        return Photo.objects.filter(user=self.request.user)
