@@ -28,7 +28,5 @@ urlpatterns = patterns('',
     # url(r'^', include('starter_app.urls')),
     # url(r'^', include('paparazzi.urls')),
 
-    # Dashboard
-    url(r'^dashboard/', include('starter_dashboard.urls')),
 
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
