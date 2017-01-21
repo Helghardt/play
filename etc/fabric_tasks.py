@@ -183,19 +183,17 @@ def upload_www():
 
 
 def upload_config():
-    put('./etc/nginx-vhost.conf', '/srv/config/%s' % env.virtual_host)
-    run("sed -i 's/{{project_name}}/%s/g' '/srv/config/%s'" % (env.project_name, env.virtual_host))
-    # try:
-    #     put('./etc/certs/%s.key' % env.virtual_host, '/srv/certs/')
-    #     put('./etc/certs/%s.crt' % env.virtual_host, '/srv/certs/')
-    # except:
-    #     print('No certs found')
+    virtual_hosts = env.virtual_host.split(',')
+    for virtual_host in virtual_hosts:
+        put('./etc/nginx-vhost.conf', '/srv/config/%s' % virtual_host)
+        run("sed -i 's/{{project_name}}/%s/g' '/srv/config/%s'" % (env.project_name, virtual_host))
 
 
 def deploy():
     upload_app()
-    # upload_www() Removed for practicality, run manage:collectstatic instead
-    # upload_config() Removed for security
+    # prepare()
+    upload_www()
+    upload_config()
 
 
 def make_wheels():
@@ -581,4 +579,5 @@ def push_ssh(keyfile):
         key = key.replace('\n', '')
         run('echo {key} >> ~/.ssh/authorized_keys'.format(key=key))
 
-
+def chown_everything():
+    sudo("chown -R %s:%s /srv/" % ('ubuntu', 'ubuntu'))

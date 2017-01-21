@@ -26,11 +26,11 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.BasicAuthentication',
-        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
     ),
-    # 'EXCEPTION_HANDLER': 'wallet.exceptions.custom_exception_handler',
+    'EXCEPTION_HANDLER': 'config.exceptions.custom_exception_handler',
 }
 
 OLD_PASSWORD_FIELD_ENABLED = True
