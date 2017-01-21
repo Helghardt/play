@@ -5,11 +5,10 @@ from rest_framework import serializers
 class ListCreatePhotoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Photo
-        fields = ('id', 'user', 'image', 'data', 'in_profile')
+        fields = ('image', 'data', 'is_profile')
 
     def validate(self, validated_data):
         user = self.context['request'].user
-        email = validated_data.get('email')
 
         return validated_data
 
