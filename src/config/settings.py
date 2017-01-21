@@ -60,7 +60,6 @@ INSTALLED_APPS = [
 
     'administration',
     'starter_app',
-    'starter_dashboard',
     'paparazzi',
 ]
 
@@ -177,7 +176,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 TEMPLATES[0].update({'DIRS': [os.path.join(BASE_DIR, 'config/templates'),
-                              os.path.join(BASE_DIR, 'administration/templates/'),]})
+                              os.path.join(BASE_DIR, 'administration/templates/'),
+                              os.path.join(BASE_DIR, 'paparazzi/templates/')]})
 
 # Other
 # ---------------------------------------------------------------------------------------------------------------------
