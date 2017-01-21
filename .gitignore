@@ -75,6 +75,7 @@ db.sqlite3
 
 # Editor folders
 .idea
+.vscode
 
 # Node
 node_modules

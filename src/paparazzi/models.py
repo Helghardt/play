@@ -60,4 +60,4 @@ class Photo(TimeStampedModel):
     is_profile = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.image.get_directory_name()
+        return 'Photo {}'.format(self.pk)
