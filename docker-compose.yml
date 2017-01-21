@@ -8,30 +8,6 @@ webapp:
   ports:
     - 8010:8000
 
-worker_transactions:
-  extends:
-     service: webapp
-     file: ./etc/docker-services.yml
-  command: bash -c "celery -A config.celery worker --loglevel=INFO --concurrency=1 -Q transaction-${HOST_NAME}"
-  links:
-    - postgres
-
-worker_ethereum:
-  extends:
-     service: webapp
-     file: ./etc/docker-services.yml
-  command: bash -c "celery -A config.celery worker --loglevel=INFO --concurrency=1 -Q ethereum-${HOST_NAME}"
-  links:
-    - postgres
-
-worker_general:
-  extends:
-     service: webapp
-     file: ./etc/docker-services.yml
-  command: bash -c "celery -A config.celery worker --loglevel=INFO --concurrency=4 -Q general-${HOST_NAME}"
-  links:
-    - postgres
-
 postgres:
   image: postgres
   volumes_from:
