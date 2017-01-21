@@ -83,8 +83,6 @@ class Photo(TimeStampedModel):
             }
         )
 
-        print(getattr(settings, 'MICROSOFT_FACE_API_KEY'))
-
         self.data = res.json()
 
     def find_similar(self):
