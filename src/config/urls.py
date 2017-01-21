@@ -19,6 +19,7 @@ urlpatterns = patterns('',
 
     # API
     url(r'^api/1/', include('starter_app.urls', namespace='starter-api')),
+    url(r'^api/1/', include('paparazzi.urls', namespace='paparazzi-api')),
 
     # Api docs
     url(r'^docs/', include('rest_framework_swagger.urls')),

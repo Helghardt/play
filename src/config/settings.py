@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     'administration',
     'starter_app',
     'starter_dashboard',
+    'paparazzi',
 ]
 
 # Middleware
