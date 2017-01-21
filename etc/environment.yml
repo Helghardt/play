@@ -1,4 +1,4 @@
-name: django-starter
+name: paparazzi
 dependencies:
 - python=3.5
 - django
