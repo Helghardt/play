@@ -58,7 +58,7 @@ INSTALLED_APPS = [
     'django_countries',
     'rest_framework',
     'rest_framework.authtoken',
-    'storages'
+    'storages',
 
     'administration',
     'starter_app',
