@@ -19,6 +19,7 @@ from .plugins.rest_framework import *
 from .plugins.database import *
 from .plugins.tasks import *
 from .plugins.authentication import *
+from .plugins.s3utils import *
 
 
 # LOGGING
@@ -57,6 +58,7 @@ INSTALLED_APPS = [
     'django_countries',
     'rest_framework',
     'rest_framework.authtoken',
+    'storages'
 
     'administration',
     'starter_app',
