@@ -5,4 +5,7 @@ from paparazzi import views
 urlpatterns = patterns(
     url(r'^auth/', include(auth_urls)),
     url(r'^$', views.api_root),
+
+    # /photos/
+    url(r'^photos/$', views.ListCreatePhoto.as_view(), name='photos'),
 )
