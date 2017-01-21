@@ -17,27 +17,28 @@ def api_root(request, format=None):
     return Response(
         [
             {_('Authentication'): OrderedDict(
-                [(_('Register'), reverse('paparazzi-api:register',
+                [
+                    (_('Register'), reverse('rest_register',
+                                            request=request,
+                                            format=format)),
+                    (_('Login'), reverse('rest_login',
                                          request=request,
                                          format=format)),
-                 # (_('Login'), reverse('paparazzi-api:login',
-                 #                      request=request,
-                 #                      format=format)),
-                 # (_('Logout'), reverse('paparazzi-api:logout',
-                 #                       request=request,
-                 #                       format=format)),
-                 # (_('Change Password'), reverse('paparazzi-api:password_change',
-                 #                                request=request,
-                 #                                format=format)),
-                 # (_('Reset Password'), reverse('paparazzi-api:password_reset',
-                 #                               request=request,
-                 #                               format=format)),
-                 ]
+                    (_('Logout'), reverse('rest_logout',
+                                          request=request,
+                                          format=format)),
+                    (_('Change Password'), reverse('rest_password_change',
+                                                   request=request,
+                                                   format=format)),
+                    (_('Reset Password'), reverse('rest_password_reset',
+                                                  request=request,
+                                                  format=format)),
+                    (_('Reset Password Confirm'), reverse('rest_password_reset_confirm',
+                                                          request=request,
+                                                          format=format)),
+                    (_('User Details'), reverse('rest_user_details',
+                                                request=request,
+                                                format=format)),
+                ]
             )},
         ])
-
-
-def index(request):
-    context_dict = {}
-
-    return render(request, 'paparazzi/index.html', context=context_dict)

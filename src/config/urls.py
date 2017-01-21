@@ -14,7 +14,7 @@ urlpatterns = patterns('',
     # Admin Url
     url(r'^admin/', include(admin.site.urls)),
 
-    # Auth API
+    # # Auth API
     url(r'^api/1/', include('administration.urls')),
 
     # API
@@ -25,8 +25,8 @@ urlpatterns = patterns('',
     url(r'^docs/', include('rest_framework_swagger.urls')),
 
     # Index
-    url(r'^', include('starter_app.urls')),
-    url(r'^', include('paparazzi.urls')),
+    # url(r'^', include('starter_app.urls')),
+    # url(r'^', include('paparazzi.urls')),
 
     # Dashboard
     url(r'^dashboard/', include('starter_dashboard.urls')),
