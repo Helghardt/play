@@ -41,5 +41,3 @@ requests-oauthlib==0.6.1
 six==1.10.0
 twilio==5.4.0
 web3==0.1.9
-
-
