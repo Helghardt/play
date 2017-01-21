@@ -1,3 +1,5 @@
+import requests
+
 from collections import OrderedDict
 from django.utils.translation import ugettext as _
 from django.shortcuts import render
@@ -10,6 +12,8 @@ from rest_framework.reverse import reverse
 from rest_framework.settings import api_settings
 from paparazzi.models import Photo
 from paparazzi.serializers import ListCreatePhotoSerializer
+
+from django.conf import settings
 
 
 @api_view(['GET'])
@@ -269,4 +273,18 @@ class ListCreatePhoto(ListCreateAPIView):
         serializer.save(user=self.request.user)
 
     def get_queryset(self):
+        url = 'https://westus.api.cognitive.microsoft.com/face/v1.0/detect?returnFaceId=true&returnFaceLandmarks=true&returnFaceAttributes=age,gender,headPose,smile,facialHair,glasses'
+        data = open(getattr(settings, 'PROJECT_DIR') + '/var/www/media/users/1/images/test.jpg', 'rb').read()
+        res = requests.post(
+            url=url,
+            data=data,
+            headers={
+                'Content-Type': 'application/octet-stream',
+                'Ocp-Apim-Subscription-Key': getattr(settings, 'MICROSOFT_FACE_API_KEY')
+            }
+        )
+        faceId = res.json()[0]['faceId']
+        print(faceId)
+        # return res
+
         return Photo.objects.filter(user=self.request.user)
