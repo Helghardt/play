@@ -48,7 +48,7 @@ def api_root(request, format=None):
             )},
             {_('Paparazzi'): OrderedDict(
                 [
-                    (_('Photos'), reverse('photos',
+                    (_('Photos'), reverse('paparazzi-api:photos',
                                             request=request,
                                             format=format)),
                 ]
