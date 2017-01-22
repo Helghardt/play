@@ -54,11 +54,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_auth',
     'rest_auth.registration',
-    'timezone_field',
-    'django_countries',
     'rest_framework',
     'rest_framework.authtoken',
-    'storages',
 
     'administration',
     'starter_app',

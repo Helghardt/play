@@ -1,6 +1,6 @@
-name: paparazzi
+name: play-server
 dependencies:
 - python=3.5
-- django
+- django==1.9.7
 - psycopg2
 - pip

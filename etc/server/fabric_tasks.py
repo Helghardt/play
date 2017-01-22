@@ -29,7 +29,7 @@ env.pptp_secret = os.environ.get('PPTP_SECRET', 'replace_with_real_password')
 
 # How to create default deployment
 def create_server(provider='digitalocean'):
-    if provider=='digitalocean':
+    if provider == 'digitalocean':
         local('docker-machine create '
               '--driver digitalocean '
               '--digitalocean-region=nyc2 '
@@ -38,10 +38,10 @@ def create_server(provider='digitalocean'):
                                    host_name=env.host_name))
 
     # for gcloud, first install gcloud and do gcloud auth login
-    elif provider=='gcloud':
+    elif provider == 'gcloud':
         local('docker-machine create '
               '--driver google '
-              '--google-project zapgo-1273 '
+              '--google-project play-server '
               '--google-zone europe-west1-c '
               '--google-machine-type n1-standard-1 '
               '--google-username {user} '
@@ -61,11 +61,12 @@ def create_ssh_config():
     )
     local('echo "\nHost {host_name}\n\tHostName {ip}\n\tPort {ssh_port}\n\tUser {user}\n\tIdentityFile {keyfile}"'
           '>> ~/.ssh/config'.format(host_name=env.host_name,
-                                     ip=ip_address,
-                                     ssh_port=env.sshd_port,
-                                     user=env.user_name,
-                                     keyfile=keyfile))
+                                    ip=ip_address,
+                                    ssh_port=env.sshd_port,
+                                    user=env.user_name,
+                                    keyfile=keyfile))
     print(ssh_config)
+
 
 env.ssh_config_template = """Host {host_name}
     HostName {ip}
@@ -138,9 +139,9 @@ def install_server_requirements():
 
     # Install Docker Compose:
     sudo('curl -L '
-        'https://github.com/docker/compose/releases/download/{docker_compose_version}/'
-        'docker-compose-`uname -s`-`uname -m`'
-        ' > /usr/local/bin/docker-compose'.format(docker_compose_version=env.docker_compose_version))
+         'https://github.com/docker/compose/releases/download/{docker_compose_version}/'
+         'docker-compose-`uname -s`-`uname -m`'
+         ' > /usr/local/bin/docker-compose'.format(docker_compose_version=env.docker_compose_version))
 
     sudo('chmod +x /usr/local/bin/docker-compose')
 
