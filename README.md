@@ -1,5 +1,5 @@
-# ZapGo django starter app and deployment setup.
-ZapGo's Docker based development and deployment stack for [django](https://www.djangoproject.com/) based on [jr-minnaar/dstack](https://github.com/jr-minnaar/dstack).
+# Helghardt's django starter app and deployment setup.
+Helghardt's Docker based development and deployment stack for [django](https://www.djangoproject.com/) based on [jr-minnaar/dstack](https://github.com/jr-minnaar/dstack).
 
 ## Requirements
 
