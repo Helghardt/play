@@ -10,6 +10,7 @@ from rest_framework import routers
 from django.contrib.auth.views import password_reset_confirm
 
 from rest_framework.urlpatterns import format_suffix_patterns
+from administration import views
 
 admin.autodiscover()
 
@@ -30,4 +31,6 @@ urlpatterns = patterns('',
 
                        url(r'^', include('rest_auth.urls')),
                        url(r'^register/', RegisterView.as_view(), name='rest_register'),
+
+                       url(r'^$', views.api_root),
                        )

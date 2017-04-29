@@ -203,8 +203,7 @@ def make_wheels():
     with cd('/srv/build/wheelhouse'):
         run('rm -rf *.whl')
 
-    # compose(cmd='-f service.yml -p %s run --rm wheel-factory' % env.project_name, path='/srv/build')
-    compose(cmd='-f -p %s run --rm wheel-factory' % env.project_name, path='/srv/build')
+    compose(cmd='-f service.yml -p %s run --rm wheel-factory' % env.project_name, path='/srv/build')
 
 
 def build_docker_image():

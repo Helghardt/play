@@ -58,7 +58,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
 
     'administration',
-    'starter_app',
+    'everything'
 ]
 
 # Middleware
@@ -174,8 +174,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 TEMPLATES[0].update({'DIRS': [os.path.join(BASE_DIR, 'config/templates'),
-                              os.path.join(BASE_DIR, 'administration/templates/'),
-                              os.path.join(BASE_DIR, 'paparazzi/templates/')]})
+                              os.path.join(BASE_DIR, 'administration/templates/')]})
 
 # Other
 # ---------------------------------------------------------------------------------------------------------------------

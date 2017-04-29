@@ -1,0 +1,42 @@
+[
+  {
+    "model": "everything.inputtype",
+    "pk": 1,
+    "fields": {
+      "slug": "rating",
+      "description": "Rating",
+      "status": true
+    }
+  },
+  {
+    "model": "everything.inputtype",
+    "pk": 2,
+    "fields": {
+      "slug": "text",
+      "description": "Text",
+      "status": true
+    }
+  },
+  {
+    "model": "everything.recipe",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "slug": "rate_everything",
+      "description": "Rate Everything",
+      "created": "2016-05-24T14:11:26.228Z",
+      "update": "2016-05-24T14:11:26.228Z",
+      "custom": true,
+      "public": true,
+      "status": true
+    }
+  },
+  {
+    "model": "everything.recipe_input",
+    "pk": 1,
+    "fields": {
+      "recipe": 1,
+      "input_type": 1
+    }
+  }
+]

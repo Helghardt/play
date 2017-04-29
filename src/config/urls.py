@@ -6,7 +6,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 
-urlpatterns = patterns('',
+urlpatterns = [
 
     # Admin Url
     url(r'^admin/', include(admin.site.urls)),
@@ -15,7 +15,7 @@ urlpatterns = patterns('',
     url(r'^api/1/', include('administration.urls')),
 
     # API
-    url(r'^api/1/', include('starter_app.urls', namespace='starter-api')),
+    url(r'^api/1/', include('everything.urls', namespace='everything-api')),
 
 
-) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
