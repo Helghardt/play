@@ -1,0 +1,19 @@
+[
+{
+  "model": "administration.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$24000$vs5qqnAN3KtP$58X12uu1plWAu2lTqWR5zQWXiLBlpLPZmkqWQe5R/2I=",
+    "last_login": "2017-02-10T20:08:23.601Z",
+    "is_superuser": true,
+    "username": "admin@helghardt.com",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@helghardt.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2016-05-18T13:59:54Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}]

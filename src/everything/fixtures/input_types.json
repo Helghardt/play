@@ -25,14 +25,14 @@
       "slug": "rate_everything",
       "description": "Rate Everything",
       "created": "2016-05-24T14:11:26.228Z",
-      "update": "2016-05-24T14:11:26.228Z",
+      "updated": "2016-05-24T14:11:26.228Z",
       "custom": true,
       "public": true,
       "status": true
     }
   },
   {
-    "model": "everything.recipe_input",
+    "model": "everything.recipeinput",
     "pk": 1,
     "fields": {
       "recipe": 1,
