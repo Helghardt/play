@@ -10,7 +10,8 @@ from rest_framework import routers
 from django.contrib.auth.views import password_reset_confirm
 
 from rest_framework.urlpatterns import format_suffix_patterns
-from administration import views
+# from administration import views
+from config import views
 
 admin.autodiscover()
 
