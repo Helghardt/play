@@ -19,7 +19,7 @@ urlpatterns = [
     url(r'^api/1/', include('everything.urls', namespace='everything-api')),
 
     # API
-    url(r'^api/1/', include('escrow.urls', namespace='escrow-api')),
+    url(r'^api/1/escrow/', include('escrow.urls', namespace='escrow-api')),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

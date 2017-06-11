@@ -58,11 +58,8 @@ def api_root(request, format=None):
             {_('Escrow'): OrderedDict(
                 [
                     (_('Create Escrow'), reverse('escrow-api:create-escrow',
-                                              request=request,
-                                              format=format)),
-                    (_('Update Escrow'), reverse('escrow-api:update-escrow',
-                                              request=request,
-                                              format=format))
+                                                 request=request,
+                                                 format=format))
                 ]
             )},
 

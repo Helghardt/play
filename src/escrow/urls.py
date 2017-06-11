@@ -3,6 +3,6 @@ from escrow import views
 from config.views import *
 
 urlpatterns = [
-    url(r'^escrow/create/$', views.CreateEscrow.as_view(), name='create-escrow'),
-    url(r'^escrow/(?P<transfer_id>.*)/$', views.UpdateEscrow.as_view(), name='update-escrow'),
+    url(r'^create/$', views.CreateEscrow.as_view(), name='create-escrow'),
+    url(r'^(?P<transfer_id>.*)/$', views.UpdateEscrow.as_view(), name='update-escrow'),
 ]
